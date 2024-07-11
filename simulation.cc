@@ -88,8 +88,8 @@ int main (int argc, char *argv[])
         NS_LOG_UNCOND ("  Tx Bytes:   " << i->second.txBytes);
         NS_LOG_UNCOND ("  Rx Packets: " << i->second.rxPackets);
         NS_LOG_UNCOND ("  Rx Bytes:   " << i->second.rxBytes);
-       // NS_LOG_UNCOND ("  Throughput: " << i->second.rxBytes * 8.0 / (i->second.timeLastRxPacket.GetSeconds() - i->second.timeFirstTxPacket.GetSeconds()) / 1024  << " Kbps");
-        NS_LOG_UNCOND ("  Delay: " << i->second.delaySum.GetSeconds() / i->second.rxPackets << " s");
+        NS_LOG_UNCOND ("  Throughput: " << i->second.rxBytes * 8.0 / (i->second.timeLastRxPacket.GetSeconds() - i->second.timeFirstTxPacket.GetSeconds()) / 1024  << " Kbps");
+        NS_LOG_UNCOND ("  latency taken by simulation: " << i->second.delaySum.GetSeconds() / i->second.rxPackets << " s");
     }
 
     Simulator::Destroy ();
